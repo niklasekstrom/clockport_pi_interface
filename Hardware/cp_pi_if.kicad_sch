@@ -1422,7 +1422,6 @@
   )
 
   (no_connect (at 232.41 53.34) (uuid 28075fb7-280a-4267-856f-d3053ee61e4f))
-  (no_connect (at 63.5 27.94) (uuid 419aea5d-4f44-401b-8393-f26f5f7c96a4))
   (no_connect (at 245.11 48.26) (uuid 8ac57f00-655d-498a-8092-64c43bcbde58))
   (no_connect (at 245.11 45.72) (uuid 8ac57f00-655d-498a-8092-64c43bcbde59))
   (no_connect (at 63.5 142.24) (uuid b81e0392-f977-4e0a-922c-9dcdd7227685))
@@ -3044,6 +3043,24 @@
     (pin "1" (uuid b590db2c-178b-433c-a7d7-92d8f5673475))
   )
 
+  (symbol (lib_id "power:GND") (at 63.5 27.94 90) (unit 1)
+    (in_bom yes) (on_board yes) (fields_autoplaced)
+    (uuid 6db2597f-f66a-449a-b7c8-1040c7e36038)
+    (property "Reference" "#PWR?" (id 0) (at 69.85 27.94 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (id 1) (at 67.31 27.9399 90)
+      (effects (font (size 1.27 1.27)) (justify right))
+    )
+    (property "Footprint" "" (id 2) (at 63.5 27.94 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 63.5 27.94 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 2b30c720-f4fa-4109-b629-07ff2fb5ed2b))
+  )
+
   (symbol (lib_id "power:+3V3") (at 184.15 146.05 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 72cac1f6-d5c0-4d14-8678-92770e6a6823)
@@ -3673,6 +3690,9 @@
     )
     (path "/06e701cd-e8a7-4da5-875d-d10fc46bd367"
       (reference "#PWR026") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/6db2597f-f66a-449a-b7c8-1040c7e36038"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
     (path "/f8196313-6e6d-43ff-917a-638b9d1aa3df"
       (reference "C1") (unit 1) (value "0.1u") (footprint "Capacitor_SMD:C_0603_1608Metric")
