@@ -5,4 +5,4 @@ The Amiga connects to the interface through the [clock port](https://en.wikipedi
 
 By adapting the [A314](https://github.com/niklasekstrom/a314/) software to this interface it should be possible to run services such as a314fs and the SANA-II network driver.
 
-![Compact PCB](Docs/compact_pcb.png?raw=True)
+![Compact PCB](Docs/fit_shield_pcb.png?raw=True)
