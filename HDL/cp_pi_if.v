@@ -19,7 +19,7 @@ module cp_pi_if(
 
     inout [7:0] D,
 
-    output reg LE_OUT_n = 1'b1,
+    output reg LE_OUT = 1'b0,
     output reg OE_IN_n = 1'b1,
     output OE_OUT_n,
 
@@ -132,14 +132,14 @@ always @(posedge CLK) begin
                     RAM_WE_n <= 1'b0;
             end else begin
                 if (cp_access)
-                    LE_OUT_n <= 1'b0;
+                    LE_OUT <= 1'b1;
             end
 
             state <= STATE_LATCH_OPEN;
         end
 
         STATE_LATCH_OPEN: begin
-            LE_OUT_n <= 1'b1;
+            LE_OUT <= 1'b0;
             RAM_WE_n <= 1'b1;
 
             if (write_access) begin
