@@ -68,7 +68,6 @@ assign OE_OUT_n = !cp_rd;
 reg [1:0] access_reg;
 reg write_access;
 reg cp_access;
-reg cp_front_address;
 
 reg drive_data_from_pi;
 assign D = drive_data_from_pi ? PI_D : 8'bz;
@@ -84,15 +83,11 @@ always @(posedge CLK) begin
     case (state)
         STATE_IDLE: begin
             if (cp_req_sync && !cp_ack) begin
+                state <= !cp_access ? STATE_SWAP_ADDRESSES : STATE_ADDRESS_STABLE;
+
                 access_reg <= CP_A;
                 write_access <= !IOWR_n;
                 cp_access <= 1'b1;
-
-                if (!cp_front_address) begin
-                    cp_front_address <= 1'b1;
-                    state <= STATE_SWAP_ADDRESSES;
-                end else
-                    state <= STATE_ADDRESS_STABLE;
 
                 if (!IOWR_n) begin
                     OE_IN_n <= 1'b0;
@@ -101,15 +96,11 @@ always @(posedge CLK) begin
                         RAM_OE_n <= 1'b0;
                 end
             end else if (pi_req_sync && !PI_ACK) begin
+                state <= cp_access ? STATE_SWAP_ADDRESSES : STATE_ADDRESS_STABLE;
+
                 access_reg <= PI_A;
                 write_access <= PI_WR;
                 cp_access <= 1'b0;
-
-                if (cp_front_address) begin
-                    cp_front_address <= 1'b0;
-                    state <= STATE_SWAP_ADDRESSES;
-                end else
-                    state <= STATE_ADDRESS_STABLE;
 
                 if (PI_WR) begin
                     drive_data_from_pi <= 1'b1;
