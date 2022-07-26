@@ -70,7 +70,8 @@ reg write_access;
 reg cp_access;
 
 reg drive_data_from_pi;
-assign D = drive_data_from_pi ? PI_D : 8'bz;
+wire drive_irq = state != STATE_IDLE && access_reg == REG_IRQ && !write_access;
+assign D = drive_data_from_pi ? PI_D : (drive_irq ? {7'd0, cp_access ? cp_irq : PI_IRQ} : 8'bz);
 
 reg [7:0] pi_data;
 assign PI_D = PI_REQ && !PI_WR ? pi_data : 8'bz;
