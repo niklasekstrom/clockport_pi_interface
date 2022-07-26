@@ -136,17 +136,10 @@ always @(posedge CLK) begin
             if (write_access) begin
                 case (access_reg)
                     REG_IRQ: begin
-                        if (cp_access) begin
-                            if (D[0])
-                                PI_IRQ <= 1'b1;
-                            else
-                                cp_irq <= 1'b0;
-                        end else begin
-                            if (D[0])
-                                cp_irq <= 1'b1;
-                            else
-                                PI_IRQ <= 1'b0;
-                        end
+                        if (D[7])
+                            {PI_IRQ, cp_irq} <= {PI_IRQ, cp_irq} | D[1:0];
+                        else
+                            {PI_IRQ, cp_irq} <= {PI_IRQ, cp_irq} & ~D[1:0];
                     end
                     REG_A_LO: front_address[7:0] <= D;
                     REG_A_HI: front_address[15:8] <= D;
