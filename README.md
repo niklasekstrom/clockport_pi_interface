@@ -3,9 +3,12 @@
 This interface has a small 64 kB SRAM memory that is shared between an Amiga and a Raspberry Pi.
 The Amiga connects to the interface through the [clock port](https://en.wikipedia.org/wiki/Clock_port).
 
-By adapting the [A314](https://github.com/niklasekstrom/a314/) software to this interface it should be possible to run services such as a314fs and the SANA-II network driver.
+The [A314](https://github.com/niklasekstrom/a314) software has been adapted to this interface so that it is possible to run services such as a314fs and the SANA-II network driver.
+The software is available as the [clockport_if](https://github.com/niklasekstrom/a314/tree/clockport_if) branch in the a314 repository, which is added to this repository as a git submodule.
 
-![Compact PCB](Docs/fit_shield_pcb.png?raw=True)
+|         |            |
+| ------------- |---------------|
+| ![PCB](Docs/soldered_board.jpg?raw=true)      | ![Installed with Pi 3A](Docs/installed_pi_3a.jpg?raw=true) |
 
 ## Details about how the interface works
 
