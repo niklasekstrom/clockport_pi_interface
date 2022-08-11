@@ -8,7 +8,7 @@ The software is available as the [clockport_if](https://github.com/niklasekstrom
 
 |         |            |
 | ------------- |---------------|
-| ![PCB](Docs/soldered_board.jpg?raw=true)      | ![Installed with Pi 3A](Docs/installed_pi_3a.jpg?raw=true) |
+| ![PCB](Docs/soldered_board.jpg?raw=true)      | ![Installed with Pi 3A](Docs/installed_pi_zero_2w.jpg?raw=true) |
 | ![PCB](Docs/amirc.jpg?raw=true)      | |
 
 ## Details about how the interface works
