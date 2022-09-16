@@ -47,11 +47,11 @@ So in order to read and write to the SRAM, either side must set the address poin
 
 ## Bill of materials
 
-| References                     | Value                | Footprint                       | Quantity |
-|--------------------------------|----------------------|---------------------------------|----------|
-| C1, C2, C3, C4, C5, C6, C7, C8 | 0.1u                 | C_0603_1608Metric               | 8        |
-| U1                             | XC9572XL-VQ64        | TQFP-64_10x10mm_P0.5mm          | 1        |
-| IC2, IC3                       | SN74LVC573APWRE4     | SOP65P640X120-20N               | 2        |
-| IC1                            | IS63WV1288DBLL-10TLI | SOIC127P1176X120-32N            | 1        |
-| J1                             | Raspberry_Pi_2_3     | PinSocket_2x20_P2.54mm_Vertical | 1        |
-| J2                             | Conn_02x11_Odd_Even  | PinSocket_2x11_P2.00mm_Vertical | 1        |
+| References                     | Value                                                | Footprint                       | Quantity |
+|--------------------------------|------------------------------------------------------|---------------------------------|----------|
+| C1, C2, C3, C4, C5, C6, C7, C8 | 0.1u                                                 | C_0603_1608Metric               | 8        |
+| U1                             | XC9572XL-VQ64                                        | TQFP-64_10x10mm_P0.5mm          | 1        |
+| IC2, IC3                       | SN74LVC573APWRE4<br>(alt: 74LVC573APW,118)           | SOP65P640X120-20N               | 2        |
+| IC1                            | IS63WV1288DBLL-10TLI<br>(alt: IS61WV1288EEBLL-10TLI) | SOIC127P1176X120-32N            | 1        |
+| J1                             | Raspberry_Pi_2_3                                     | PinSocket_2x20_P2.54mm_Vertical | 1        |
+| J2                             | Conn_02x11_Odd_Even                                  | PinSocket_2x11_P2.00mm_Vertical | 1        |
