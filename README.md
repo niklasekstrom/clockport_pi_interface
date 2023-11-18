@@ -1,10 +1,16 @@
 # Amiga clock port to Raspberry Pi interface
 
-This interface has a small 64 kB SRAM memory that is shared between an Amiga and a Raspberry Pi.
-The Amiga connects to the interface through the [clock port](https://en.wikipedia.org/wiki/Clock_port).
+This interface has a small 64 kB SRAM memory that is shared between an Amiga
+and a Raspberry Pi. The Amiga connects to the interface through the
+[clock port](https://en.wikipedia.org/wiki/Clock_port).
 
-The [A314](https://github.com/niklasekstrom/a314) software has been adapted to this interface so that it is possible to run services such as a314fs and the SANA-II network driver.
-The software is available as the [clockport_if](https://github.com/niklasekstrom/a314/tree/clockport_if) branch in the a314 repository, which is added to this repository as a git submodule.
+The [A314](https://github.com/niklasekstrom/a314) software has been adapted
+to this interface so that it is possible to run services such as a314fs and
+the SANA-II network driver. This board has later become referenced to as A314-cp.
+The software for all variants of A314 is available in the main branch of the
+a314 repository. The instructions for how to install the software is in the
+[Software/README.md](https://github.com/niklasekstrom/a314/blob/main/Software/README.md)
+file.
 
 |         |            |
 | ------------- |---------------|
@@ -15,7 +21,9 @@ The software is available as the [clockport_if](https://github.com/niklasekstrom
 
 Either side, the Amiga or the Pi, can read from and write to the SRAM.
 The interface is 8 bits wide, meaning that each access reads or writes one byte.
-The interface is symmetric between the sides, so in this description we describe how the Amiga is communicating with the interface, but the communicating between the Pi and the interface works in the same way.
+The interface is symmetric between the sides, so in this description we describe
+how the Amiga is communicating with the interface, but the communicating between
+the Pi and the interface works in the same way.
 
 The Amiga can perform two commands towards the interface:
 

@@ -1,4 +1,0 @@
-[submodule "a314"]
-	path = a314
-	url = https://github.com/niklasekstrom/a314
-	branch = clockport_if
